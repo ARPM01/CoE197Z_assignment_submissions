@@ -60,7 +60,6 @@ class ImageDataset(torch.utils.data.Dataset):
         target["image_id"] = image_id
         target["area"] = area
         target['iscrowd'] = iscrowd
-        #target["masks"] = torch.zeros(3,480,640)
 
         if self.transform:
             img = self.transform(img)
@@ -96,20 +95,49 @@ def create_model(num_classes):
 device = torch.device('cuda') if torch.cuda.is_available() else torch.device('cpu')
 model = create_model(4)
 model.to(device)
-model.load_state_dict(torch.load('model_weights.pth'))
+model.load_state_dict(torch.load('model_weights.pth', map_location = device))
 model.eval()
 evaluate(model, test_loader, device=device)
 
-# pick one image from the test set
-img, _ = test_split[12]
+# use to pick one image from the test_split
+#img, _ = test_split[42]
+img = Image.open("sample_images/007.jpg")
+img = transforms.functional.to_tensor(img)
 model.eval()
 with torch.no_grad():
     prediction = model([img.to(device)])
 
-boxes = prediction[0]['boxes'][0]
-x1 = boxes[0]
-y1 = boxes[1]
-x2 = boxes[2]
-x3 = boxes[3]
-
+boxes = prediction[0]['boxes']
 labels = prediction[0]['labels']
+img = img.swapaxes(0,1)
+img = img.swapaxes(1,2)
+
+import matplotlib.pyplot as plt
+from matplotlib.patches import Rectangle
+colors = ['w', 'r', 'b', 'g', 'c', 'm', 'y', 'g', 'c', 'm', 'k']
+i = 0
+fig, ax = plt.subplots(1)
+plt.imshow(img)
+for box in boxes:
+  w = box[2] - box[0]
+  h = box[3] - box[1]
+  x = box[0]
+  y = box[1]
+  item_label = labels[i]
+  color = colors[item_label]    #red = water, blue = coke, juice = green
+  rect = Rectangle((x, y),
+                         w,
+                         h,
+                         linewidth=2,
+                         edgecolor=color,
+                         facecolor='none')
+  if (prediction[0]['scores'][i] > 0.80):   #only add bounding box when score is greater than 0.8
+    ax.add_patch(rect)
+    if (item_label == 1):
+      ax.text(x+5, y-5, "water")
+    if (item_label == 2):
+      ax.text(x+5, y-5, "Coke")
+    if (item_label == 3):
+      ax.text(x+5, y-5, "juice")
+  i += 1
+plt.show()
