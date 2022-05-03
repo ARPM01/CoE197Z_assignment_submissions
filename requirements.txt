@@ -1,0 +1,10 @@
+datasets
+matplotlib
+numpy
+torch
+tqdm
+torchvision
+wandb
+cython
+pycocotools
+matplotlib
