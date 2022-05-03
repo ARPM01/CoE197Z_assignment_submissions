@@ -6,3 +6,6 @@ See releases for the pre-trained weights and the dataset.
 
 Faster R-CNN is an objection detection model that extracts features using a pre-trained CNN. 
 Read more https://arxiv.org/abs/1506.01497.
+
+Shown below are the results of the model on the test_split data set.  
+![image](https://user-images.githubusercontent.com/92358150/166443722-4187fb65-36b7-4425-902d-653571a62e22.png)
