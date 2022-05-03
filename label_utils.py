@@ -13,17 +13,12 @@ from __future__ import unicode_literals
 
 import numpy as np
 import csv
+import config
 import os
 import matplotlib.pyplot as plt
 
 from matplotlib.patches import Rectangle
 from random import randint
-
-params = {
-        'epoch_offset': 0,
-        'classes' : ["background", "Water", "Soda", "Juice"],
-        'prices' : [0.0, 10.0, 40.0, 35.0]
-        }
 
 def get_box_color(index=None):
     """Retrieve plt-compatible color string based on object index"""
@@ -43,13 +38,13 @@ def get_box_rgbcolor(index=None):
 
 def index2class(index=0):
     """Convert index (int) to class name (string)"""
-    classes = params['classes']
+    classes = config.params['classes']
     return classes[index]
 
 
 def class2index(class_="background"):
     """Convert class name (string) to index (int)"""
-    classes = params['classes']
+    classes = config.params['classes']
     return classes.index(class_)
 
 
@@ -127,14 +122,14 @@ def show_labels(image, labels, ax=None):
     """Draw bounding box on an object given box coords (labels[1:5])"""
     if ax is None:
         fig, ax = plt.subplots(1)
-        ax.imshow(image)
+        plt.imshow(image)
     for label in labels:
-        # default label format is xmin, xmax, ymin, ymax
-        w = label[1] - label[0]
-        h = label[3] - label[2]
-        x = label[0]
-        y = label[2]
-        category = int(label[4])
+        # default label format is xmin, ymin, xmax, ymax
+        w = label[0][2] - label[0][0]
+        h = label[0][3] - label[0][1]
+        x = label[0][0]
+        y = label[0][1]
+        category = int(label[1])
         color = get_box_color(category)
         # Rectangle ((xmin, ymin), width, height) 
         rect = Rectangle((x, y),
