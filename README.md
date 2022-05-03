@@ -1,7 +1,7 @@
 # FasterRCNN_finetuned
-Faster R-CNN is an objection detection model that extracts features using a pre-trained CNN. Read more https://arxiv.org/abs/1506.01497.
+Faster R-CNN is an object detection model that extracts features using a pre-trained CNN. Read more https://arxiv.org/abs/1506.01497.
 
-A repository created by Adonais Ray Maclang. Here, the Faster R-CNN Object Detection Model is finetuned using the drinks dataset containing 3 classes: water, coke, juice.
+A repository created by Adonais Ray Maclang. Here, the Faster R-CNN model is finetuned using the drinks dataset containing 3 classes: water, coke, juice.
 
 To train, unzip the drinks dataset into the main folder (https://bit.ly/adl2-ssd) and run train.py. To see results on test_split, run test.py. Alternatively, view the Google Colab Notebooks. 
 
