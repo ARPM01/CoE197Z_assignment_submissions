@@ -1,5 +1,5 @@
 # FasterRCNN_finetuned
-Faster R-CNN is an object detection model that extracts features using a pre-trained CNN. Read more https://arxiv.org/abs/1506.01497.
+Faster R-CNN is an object detection model that uses a trained Region Proposal Network (RPN) algorithm to extract features. Faster R-CNN and RPN are the foundations of several 1st place entries in competitions. Read more https://arxiv.org/abs/1506.01497.
 
 A repository created by Adonais Ray Maclang. Here, the Faster R-CNN model is finetuned using the drinks dataset containing 3 classes: water, coke, juice.
 
@@ -14,3 +14,6 @@ Some sample images with bounding boxes from the test_split and from own images a
 
 ![sample_test2](https://user-images.githubusercontent.com/92358150/166464506-87573c37-86be-4203-96f5-314f30c9ada0.png)
 ![007](https://user-images.githubusercontent.com/92358150/166464530-188a8764-3c74-4164-a087-8cc139a1732e.png)
+
+https://user-images.githubusercontent.com/92358150/166587931-e61c4d80-09c8-4edd-8779-bd7ef0b18369.mp4
+
