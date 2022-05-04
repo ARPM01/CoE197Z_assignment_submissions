@@ -15,6 +15,13 @@ from PIL import Image
 from engine import train_one_epoch, evaluate
 from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 
+path =''
+if (not os.path.isfile('model_weights.pth')):
+    import gdown
+    url = 'https://drive.google.com/uc?export=download&id=1tQKJ-csmigB87gJEk7FlAEvAs5um3IQh'
+    output = 'model_weights.pth'
+    gdown.download(url, output, quiet=False)
+
 config = {
     "num_workers": 0,
     "pin_memory": False,
