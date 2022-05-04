@@ -5,21 +5,21 @@ A repository created by Adonais Ray Maclang. Here, the Faster R-CNN model is fin
 
 Install the required packages. 
 
-'''
+```
 !pip install -r requirements.txt
-'''
+```
 
 To train, run train.py. 
 
-'''
+```
 !python3 train.py
-'''
+```
 
 To see results on test dataset, run test.py. This uses the weights from train.py. If model_weights.pth is not available on working folder, it downloads the pre-trained weights also available in releases. 
 
-'''
+```
 !python3 test.py
-'''
+```
 
 Alternatively, view the Google Colab Notebooks. 
 
