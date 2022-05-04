@@ -9,13 +9,13 @@ Install the required packages.
 !pip install -r requirements.txt
 ```
 
-To train, run train.py. 
+To train, run train.py. This also downloads the dataset. 
 
 ```
 !python3 train.py
 ```
 
-To see results on test dataset, run test.py. This uses the weights from train.py. If model_weights.pth is not available on working folder, it downloads the pre-trained weights also available in releases. 
+To see results on test dataset, run test.py. This uses the weights from train.py. If model_weights.pth is not available on working folder, it downloads the pre-trained weights also available in releases. This requires the drinks dataset on the folder. 
 
 ```
 !python3 test.py
