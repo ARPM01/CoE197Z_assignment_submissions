@@ -18,6 +18,18 @@ from torchvision.models.detection.faster_rcnn import FastRCNNPredictor
 if torch.cuda.is_available():
     torch.set_default_tensor_type('torch.cuda.FloatTensor')
 
+import gdown
+
+url = 'https://drive.google.com/uc?id=1AdMbVK110IKLG7wJKhga2N2fitV1bVPA'
+output = 'drinks.tar.gz'
+gdown.download(url, output, quiet=False)
+
+import tarfile
+file = tarfile.open('drinks.tar.gz')
+print("Extracting tar file...")
+file.extractall('')
+file.close()
+
 config = {
     "num_workers": 0,
     "pin_memory": False,
