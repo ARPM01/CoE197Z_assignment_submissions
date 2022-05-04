@@ -3,9 +3,25 @@ Faster R-CNN is an object detection model that uses a trained Region Proposal Ne
 
 A repository created by Adonais Ray Maclang. Here, the Faster R-CNN model is finetuned using the drinks dataset containing 3 classes: water, coke, juice.
 
-To train, unzip the drinks dataset into the main folder (https://bit.ly/adl2-ssd) and run train.py. To see results on test_split, run test.py. Alternatively, view the Google Colab Notebooks. 
+Install the required packages. 
 
-See releases for the pre-trained weights and the dataset.
+'''
+!pip install -r requirements.txt
+'''
+
+To train, run train.py. 
+
+'''
+!python3 train.py
+'''
+
+To see results on test dataset, run test.py. This uses the weights from train.py. If model_weights.pth is not available on working folder, it downloads the pre-trained weights also available in releases. 
+
+'''
+!python3 test.py
+'''
+
+Alternatively, view the Google Colab Notebooks. 
 
 Shown below are the results of the model on the test_split data set.  
 ![image](https://user-images.githubusercontent.com/92358150/166443722-4187fb65-36b7-4425-902d-653571a62e22.png)
