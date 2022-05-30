@@ -13,7 +13,7 @@ To train, run train.py.
 !python3 train.py
 ```
 
-To use the GUI, run kes-infer.py
+To use the GUI with the pre-trained weights, run kws-infer.py
 
 ```
 !python3 kws-infer.py
