@@ -1,6 +1,8 @@
 # CoE 197Z Assignment Submissions by Adonais Ray Maclang
 ## Assignment 3: Keyword Spotting using Transformers
 
+A keyword spotting application was developed using a Transformer model, which was trained using the Speech Commands dataset.  
+
 Install the required packages. 
 
 ```
