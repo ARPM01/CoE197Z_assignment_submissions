@@ -4,3 +4,4 @@ einops
 sounddevice
 validators
 PYSimpleGUI
+gdown
