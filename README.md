@@ -18,7 +18,7 @@ To train, run train.py.
 !python3 train.py
 ```
 
-To use the KWS GUI with the pre-trained weights, run kws-infer.py
+To use the KWS GUI with the pre-trained weights (default), run kws-infer.py.
 
 ```
 !python3 kws-infer.py
