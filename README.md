@@ -23,6 +23,10 @@ To use the KWS GUI with the pre-trained weights, run kws-infer.py
 ```
 !python3 kws-infer.py
 ```
+
+https://user-images.githubusercontent.com/92358150/171136054-1a4a7210-00b0-48e0-b8e6-ab9e46c439fa.mp4
+
+
 You may also check the Google Colab notebook to see the transformer model in action. 
 
 ![image](https://user-images.githubusercontent.com/92358150/171085296-0240acfd-3e8b-498b-bbef-7702fb107fc6.png)
