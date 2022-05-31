@@ -1,7 +1,10 @@
 # CoE 197Z Assignment Submissions by Adonais Ray Maclang
 ## Assignment 3: Keyword Spotting using Transformers
 
-A keyword spotting application was developed using a Transformer model, which was trained using the Speech Commands dataset.  
+A keyword spotting application was developed using a Transformer model, which was trained using the Speech Commands dataset. After training for 40 epochs, the model is able to achieve around 82% accuracy on the test split. 
+
+![image](https://user-images.githubusercontent.com/92358150/171125499-4e8680c3-3fa6-4ebc-8157-70f56baedc50.png)
+
 
 Install the required packages. 
 
@@ -20,7 +23,9 @@ To use the KWS GUI with the pre-trained weights, run kws-infer.py
 ```
 !python3 kws-infer.py
 ```
+You may also check the Google Colab notebook to see the transformer model in action. 
 
+![image](https://user-images.githubusercontent.com/92358150/171085296-0240acfd-3e8b-498b-bbef-7702fb107fc6.png)
 
 
 ## Assignment 2: Object Detection
