@@ -36,7 +36,7 @@ import time
 import validators
 from torchvision.transforms import ToTensor
 from einops import rearrange
-
+import gdown
 
 def get_args():
     parser = argparse.ArgumentParser()
@@ -46,7 +46,7 @@ def get_args():
     parser.add_argument("--win-length", type=int, default=None)
     parser.add_argument("--hop-length", type=int, default=512)
     parser.add_argument("--wav-file", type=str, default=None)
-    parser.add_argument("--checkpoint", type=str, default="https://github.com/ARPM01/CoE197Z_assignment_submissions/releases/download/Weights/transformer-kws.pt")
+    parser.add_argument("--checkpoint", type=str, default="transformer-kws-best.pt")
     parser.add_argument("--gui", default=True, action="store_true")
     parser.add_argument("--rpi", default=False, action="store_true")
     parser.add_argument("--threshold", type=float, default=0.6)
@@ -69,7 +69,9 @@ if __name__ == "__main__":
         checkpoint = args.checkpoint.rsplit('/', 1)[-1]
         # check if checkpoint file exists
         if not os.path.isfile(checkpoint):
-            torch.hub.download_url_to_file(args.checkpoint, checkpoint)
+            url = 'https://drive.google.com/uc?export=download&id=1KaUUkPVGk6FY100J9bIEQlyzVNNaFxxz'
+            output = 'transformer-kws-best.pt'
+            gdown.download(url, output, quiet=False)
     else:
         checkpoint = args.checkpoint
 
