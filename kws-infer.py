@@ -64,11 +64,8 @@ if __name__ == "__main__":
     idx_to_class = {i: c for i, c in enumerate(CLASSES)}
 
     args = get_args()
-
-    if validators.url(args.checkpoint):
-        checkpoint = args.checkpoint.rsplit('/', 1)[-1]
-        # check if checkpoint file exists
-        if not os.path.isfile(checkpoint):
+    checkpoint = args.checkpoint
+    if not os.path.isfile(checkpoint):
             url = 'https://drive.google.com/uc?export=download&id=1KaUUkPVGk6FY100J9bIEQlyzVNNaFxxz'
             output = 'transformer-kws-best.pt'
             gdown.download(url, output, quiet=False)
