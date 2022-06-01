@@ -303,7 +303,7 @@ def get_args():
                         help='learning rate (default: 0.001)')
 
     # where dataset will be stored
-    parser.add_argument("--path", type=str, default="/data/speech_commands/")
+    parser.add_argument("--path", type=str, default="data/speech_commands/")
 
     # 35 keywords + silence + unknown
     parser.add_argument("--num-classes", type=int, default=37)
