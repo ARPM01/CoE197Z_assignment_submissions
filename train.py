@@ -384,13 +384,13 @@ if __name__ == "__main__":
     trainer = Trainer(accelerator=args.accelerator, devices=args.devices, max_epochs=args.max_epochs, precision=16 if args.accelerator == 'gpu' else 32, detect_anomaly = True)
     trainer.fit(model, datamodule=datamodule)
 
-trainer.test(model, datamodule=datamodule)
-trainer.save_checkpoint('./checkpoint.ckpt')
-print('saved checkpoint.ckpt')
-model = model.load_from_checkpoint('./checkpoint.ckpt')
-model.eval()
-script = model.to_torchscript()
-# save for use in kws-infer
-model_path = './transformer-kws.pt'
-torch.jit.save(script, model_path)
-print('saved transformer-kws.pt')
+    trainer.test(model, datamodule=datamodule)
+    trainer.save_checkpoint('./checkpoint.ckpt')
+    print('saved checkpoint.ckpt')
+    model = model.load_from_checkpoint('./checkpoint.ckpt')
+    model.eval()
+    script = model.to_torchscript()
+    # save for use in kws-infer
+    model_path = './transformer-kws.pt'
+    torch.jit.save(script, model_path)
+    print('saved transformer-kws.pt')
